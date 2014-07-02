@@ -5,7 +5,7 @@
 /*
 Plugin Name: CP Mobile Redirect
 Description: Select a URL to point mobile users to
-Author: Mehmet YILIDZ
+Author: Mehmet YILDIZ
 Version: 1.0
 Author URI: http://copypanthers.com
 */
