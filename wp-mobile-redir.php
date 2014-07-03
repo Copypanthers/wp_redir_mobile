@@ -34,7 +34,7 @@ function is_mobile(){
                     "tr" => "mobile-tr",
                     "da" => "mobile-da",
                     "nb" => "mobile-no",
-                    "sv" => "mobile-se"
+                    "sv" => "mobile-sv"
                 ];
                 if (!preg_match("/mobile/",$_SERVER['REQUEST_URI'])){
 			
