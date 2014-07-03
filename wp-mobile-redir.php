@@ -28,12 +28,12 @@ function is_mobile(){
                 
                 $mobile_pages = [
                     "en" => "mobile-index",
-                    "de" => "mobile-de",
-                    "fr" => "mobile-fr",
-                    "fi" => "mobile-fi",
-                    "tr" => "mobile-tr",
-                    "da" => "mobile-da",
-                    "nb" => "mobile-no",
+                    "de" => "mobile-german",
+                    "fr" => "mobile-french",
+                    "fi" => "mobile-finnish",
+                    "tr" => "mobile-turkish",
+                    "da" => "mobile-danish",
+                    "nb" => "mobile-nb",
                     "sv" => "mobile-sv"
                 ];
                 if (!preg_match("/mobile/",$_SERVER['REQUEST_URI'])){
