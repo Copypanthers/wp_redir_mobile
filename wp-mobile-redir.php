@@ -19,6 +19,7 @@ require_once __DIR__.'/../../../vendor/mobiledetect/mobiledetectlib/Mobile_Detec
 add_action("init","is_mobile");
 
 function is_mobile(){
+	
         $detect = new Mobile_Detect();
         if ($detect->isMobile()){
                 if (substr(icl_get_home_url(), -1) !="/"){
@@ -35,10 +36,15 @@ function is_mobile(){
                     "nb" => "mobile-no",
                     "sv" => "mobile-se"
                 ];
-                if (!preg_match("/mobile/",$_SERVER['REQUEST_URI'])){ 
-                	$tobe_redirected = $current_url.$mobile_pages[ICL_LANGUAGE_CODE];
-                	header("Location: $tobe_redirected");
-                	exit;
+                if (!preg_match("/mobile/",$_SERVER['REQUEST_URI'])){
+			
+			//If we are in a homepage redirect.
+			$request_uri = str_replace("?".$_SERVER["QUERY_STRING"],"",$_SERVER["REQUEST_URI"]);
+			if ($request_uri == "/"){ 
+                		$tobe_redirected = $current_url.$mobile_pages[ICL_LANGUAGE_CODE]."?r=1&".$_SERVER["QUERY_STRING"];
+                		header("Location: $tobe_redirected");
+                		exit;
+			}
 		}
         }
 }
