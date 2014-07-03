@@ -39,9 +39,9 @@ function is_mobile(){
                 if (!preg_match("/mobile/",$_SERVER['REQUEST_URI'])){
 			
 			//If we are in a homepage redirect.
-			$request_uri = str_replace("?".$_SERVER["QUERY_STRING"],"",$_SERVER["REQUEST_URI"]);
-			if ($request_uri == "/"){ 
-                		$tobe_redirected = $current_url.$mobile_pages[ICL_LANGUAGE_CODE]."?r=1&".$_SERVER["QUERY_STRING"];
+			$request_uri = $_SERVER["REQUEST_URI"];
+			if ($request_uri == "/" or empty($request_uri)){ 
+                		$tobe_redirected = $current_url.$mobile_pages[ICL_LANGUAGE_CODE];
                 		header("Location: $tobe_redirected");
                 		exit;
 			}
